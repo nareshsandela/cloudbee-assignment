@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "096080b4-68c0-471d-af67-8e3c4dfe4b64",
+		"name": "APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5155036",
+		"_collection_link": "https://www.postman.com/myanatomy-testing-5b0/workspace/cloud-bee-train-ticket-application/collection/5155036-096080b4-68c0-471d-af67-8e3c4dfe4b64?action=share&source=collection_link&creator=5155036"
+	},
+	"item": [
+		{
+			"name": "Get All Tickets for a Seat Selection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/train/users-and-seats?seatSection=A",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"train",
+						"users-and-seats"
+					],
+					"query": [
+						{
+							"key": "seatSection",
+							"value": "A"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Purchasing Ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"from\": \"Hyderabad\",\r\n    \"to\": \"Machilipatnam\",\r\n    \"userName\": \"Naresh_Sandela\",\r\n    \"userEmail\": \"nareshsandela97@gmail.com\",\r\n    \"price\": \"100\",\r\n    \"seatSection\": \"A\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/train/purchase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"train",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Ticket details by User Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/train/ticket-details?userName=Naresh_Sandela",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"train",
+						"ticket-details"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "Naresh_Sandela"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify Seat by User Name",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/train/modify-seat?userName=Naresh_Sandela&newSeatSection=B",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"train",
+						"modify-seat"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "Naresh_Sandela"
+						},
+						{
+							"key": "newSeatSection",
+							"value": "B"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove user with userName",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/train/remove-user?userName=naresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"train",
+						"remove-user"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "naresh"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
